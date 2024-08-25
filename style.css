@@ -1,0 +1,170 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.quiz-container {
+    max-width: 500px;
+    margin: 50px auto;
+}
+
+#score-summary {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+.score-item {
+    padding: 10px 20px;
+    font-size: 18px;
+    color: #fff;
+    border-radius: 15px;
+    margin: 0 5px;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.correct-score {
+    background-color: #178127;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+.wrong-score {
+    background-color: #812717;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+#card-art {
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: height 0.3s ease;
+}
+
+#card-art img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200%;
+    height: auto;
+    transform: translate(-50%, -50%);
+    filter: blur(10px);
+    transition: filter 0.3s ease, width 0.3s ease;
+}
+
+#card-art img.full {
+    width: 65%;
+    filter: none;
+    height: auto;
+}
+
+#card-art img.hidden {
+    display: none;
+}
+
+#card-description {
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+#choices {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.choice-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #444;
+    color: #fff;
+    transition: background-color 0.3s;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.choice-button:hover {
+    background-color: #666;
+}
+
+.choice-button.disabled {
+    cursor: not-allowed;
+    background-color: red;
+}
+
+.choice-button.correct {
+    background-color: green;
+}
+
+.choice-button.correct:hover {
+    background-color: green;
+}
+
+#next-button {
+    display: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #28a745;
+    color: #fff;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+    width: 100%;
+    box-sizing: border-box;
+    grid-column: span 4;
+}
+
+#next-button:hover {
+    background-color: #218838;
+}
+
+#result {
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 0 5px;
+    }
+
+    #card-art img.full {
+        width: 85%;
+    }
+
+    #choices {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    #next-button {
+        grid-column: span 2;
+    }
+}
+
+#mode-toggle-label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #fff;
+}
+
+#mode-toggle {
+    margin-left: 10px;
+}

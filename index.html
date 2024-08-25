@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marvel Snap Card Art Quiz</title>
+    <link rel="stylesheet" href="https://j9b1.github.io/snapquiz/style.css">
+</head>
+<body>
+    <div class="quiz-container">
+        <div id="score-summary">
+            <div class="score-item correct-score">
+                <span id="correct-count">0</span> Correct
+            </div>
+            <div class="score-item wrong-score">
+                <span id="wrong-count">0</span> Wrong
+            </div>
+        </div>
+        <label for="mode-toggle" id="mode-toggle-label">
+            <input type="checkbox" id="mode-toggle">
+            Hard Mode
+        </label>
+        <div id="card-art">
+            <img id="card-image" src="" alt="Card Art" style="display: none;">
+            <div id="card-description" style="display: none;"></div>
+        </div>
+        <div id="choices"></div>
+        <button id="next-button">Next</button>
+        <div id="result"></div>
+    </div>
+    <audio id="success-sound" src="https://github.com/J9B1/snapquiz/raw/main/audio/success.mp3" preload="auto"></audio>
+    <audio id="wrong-sound" src="https://github.com/J9B1/snapquiz/raw/main/audio/wrong.mp3" preload="auto"></audio>
+    <script src="https://j9b1.github.io/snapquiz/script.js"></script>
+</body>
+</html>
